@@ -1,0 +1,17 @@
+DOcs/
+
+# Compiled class files
+*.class
+out/
+bin/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
