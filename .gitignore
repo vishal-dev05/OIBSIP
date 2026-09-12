@@ -5,6 +5,9 @@ DOcs/
 out/
 bin/
 
+# SQLite runtime databases (created when you run the app, not source)
+*.db
+
 # IDE files
 .idea/
 *.iml
