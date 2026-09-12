@@ -1,3 +1,25 @@
+markdown
+# Online Reservation System (Java Swing + SQLite/JDBC)
+
+A GUI train/transport reservation system: log in, book a ticket (which
+generates a PNR), and cancel a booking by PNR.
+
+## Folder layout
+
+All files sit flat inside this folder (no `src` or `lib` subfolders):
+
+OnlineReservationSystem/
+├── CancellationFrame.java
+├── DatabaseManager.java
+├── LoginFrame.java
+├── Main.java
+├── MainMenuFrame.java
+├── Reservation.java
+├── ReservationFrame.java
+├── ValidationUtils.java
+├── sqlite-jdbc-3.53.4.0.jar
+└── README.md
+
 
 ## Classes
 
@@ -38,3 +60,35 @@ this is the actual SQLite database. It's covered by the repo's root
 `.gitignore` (`*.db`) so it won't get committed.
 
 ## Demo credentials
+
+Username: admin
+Password: admin123
+
+
+## Demo train numbers (for the "Fetch Name" auto-populate)
+
+| Train Number | Train Name                     |
+|--------------|---------------------------------|
+| 12951        | Mumbai Rajdhani Express         |
+| 12301        | Howrah Rajdhani Express         |
+| 12621        | Tamil Nadu Express              |
+| 12137        | Punjab Mail                     |
+| 22691        | Rajdhani Express (KSR Bengaluru)|
+
+## Feature checklist coverage
+
+- Login form with denied access on invalid credentials
+- Reservation form with all required fields, train name auto-populated from train number
+- Book button saves to SQLite and generates a unique PNR (`PNR` + zero-padded auto-increment id)
+- Confirmation dialog shown after a successful booking
+- Cancellation form: PNR input + Fetch button showing full booking details
+- Confirm cancellation with an "Are you sure?" dialog; deletes from the database
+- Input validation: required fields, strict date format, numeric train number
+
+## Notes / possible extensions
+
+- Passwords are stored in plain text in this demo for simplicity — a real
+  system should hash them (e.g. with BCrypt).
+- Train catalog is seeded with 5 demo entries; you could add an admin screen
+  to manage trains instead of hardcoding them.
+- Could add a "My Bookings" list view showing all reservations for search/browse.
