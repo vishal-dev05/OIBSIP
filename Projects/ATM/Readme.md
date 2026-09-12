@@ -1,7 +1,21 @@
+markdown
 # Java Console ATM
 
 A console-based ATM simulation built with Java, using OOP principles
 (encapsulation, separation of concerns across 5 classes).
+
+## Folder layout
+
+All files sit flat inside this folder (no `src` subfolder):
+
+ATM/
+├── Account.java
+├── ATM.java
+├── Bank.java
+├── Main.java
+├── Transaction.java
+└── README.md
+
 
 ## Classes
 
@@ -30,12 +44,32 @@ A console-based ATM simulation built with Java, using OOP principles
 
 ## How to run
 
-```bash
-cd src
-javac *.java -d ../out
-cd ../out
-java Main
+From inside this folder (`Projects/ATM`):
+
+```powershell
+javac *.java -d out
+java -cp out Main
 ```
+
+The same commands work unchanged on macOS/Linux.
+
+## Sample session
+
+Enter User ID: 1001
+Enter PIN: 1234
+Login successful. Welcome, Alice!
+
+----------------- MAIN MENU -----------------
+Current Balance: 5000.00
+
+Transaction History
+Withdraw
+Deposit
+Transfer
+Quit
+Choose an option: 2
+Enter amount to withdraw: 2000
+Withdrawal successful. New balance: 3000.00
 
 ## Possible extensions (good for a demo / viva)
 
